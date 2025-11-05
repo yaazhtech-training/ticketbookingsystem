@@ -11,9 +11,13 @@ public class UserData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;
+    @Column(name = "movie_name", nullable = false)
     private String movieName;
+    @Column(name = "theatre_name", nullable = false)
     private String theatreName;
+    @Column(name = "seat_number", nullable = false)
     private String seatNumber;
+    @Column(name = "show_time", nullable = false)
     private String showTime;
     private double amount;
 
