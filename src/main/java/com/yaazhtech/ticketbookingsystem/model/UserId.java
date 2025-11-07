@@ -5,9 +5,10 @@ public class UserId {
     private String movieName;
     private String theatreName;
     private String seatNumber;
+    private String moblieNumber;
     private String showTime;
-    private double amount;
 
+    private double amount;
     public Long getUserId() {
         return userId;
     }
@@ -39,28 +40,31 @@ public class UserId {
     public void setSeatNumber(String seatNumber) {
         this.seatNumber = seatNumber;
     }
-
+    public void setMoblieNumber(String moblieNumber) {
+        this.moblieNumber = moblieNumber;
+    }
     public String getShowTime() {
         return showTime;
-    }
-
-    public void setShowTime(String showTime) {
-        this.showTime = showTime;
     }
 
     public double getAmount() {
         return amount;
     }
 
+    public String getMoblieNumber() {
+        return moblieNumber;
+    }
+
     public void setAmount(double amount) {
         this.amount = amount;
     }
 
-    public UserId(Long userId, String movieName, String theatreName, String seatNumber, String showTime, double amount) {
+    public UserId(Long userId, String movieName, String theatreName, String seatNumber, String moblieNumber, String showTime, double amount) {
         this.userId = userId;
         this.movieName = movieName;
         this.theatreName = theatreName;
         this.seatNumber = seatNumber;
+        this.moblieNumber = moblieNumber;
         this.showTime = showTime;
         this.amount = amount;
     }

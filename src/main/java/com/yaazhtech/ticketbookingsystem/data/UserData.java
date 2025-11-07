@@ -15,12 +15,15 @@ public class UserData {
     private String movieName;
     @Column(name = "theatre_name", nullable = false)
     private String theatreName;
-    @Column(name = "seat_number", nullable = false)
+    @Column(name = "seat_number",unique = true)
     private String seatNumber;
     @Column(name = "show_time", nullable = false)
     private String showTime;
-    private double amount;
+    @Column(name = "mobilenumber", unique = true)
+    private String mobileNumber;
+    @Column(name = "amount", nullable = false)
 
+    private double amount;
     public Long getUserId() {
         return userId;
     }
@@ -67,6 +70,22 @@ public class UserData {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public UserData(Long userId) {
+        this.userId = userId;
+    }
+
+    public UserData(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 
     public UserData(Long userId, String movieName, String theatreName, String seatNumber, String showTime, double amount) {
