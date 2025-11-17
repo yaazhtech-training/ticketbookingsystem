@@ -1,6 +1,6 @@
 package com.yaazhtech.ticketbookingsystem.model;
 
-public class UserId {
+public class UserRequest {
     private  Long userId;
     private String movieName;
     private String theatreName;
@@ -59,7 +59,7 @@ public class UserId {
         this.amount = amount;
     }
 
-    public UserId(Long userId, String movieName, String theatreName, String seatNumber, String moblieNumber, String showTime, double amount) {
+    public UserRequest(Long userId, String movieName, String theatreName, String seatNumber, String moblieNumber, String showTime, double amount) {
         this.userId = userId;
         this.movieName = movieName;
         this.theatreName = theatreName;
