@@ -24,6 +24,11 @@ public class UserData {
     @Column(name = "amount", nullable = false)
 
     private double amount;
+
+    public UserData() {
+
+    }
+
     public Long getUserId() {
         return userId;
     }
