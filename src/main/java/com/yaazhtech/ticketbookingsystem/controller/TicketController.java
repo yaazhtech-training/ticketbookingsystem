@@ -6,6 +6,7 @@ import com.yaazhtech.ticketbookingsystem.model.UserRequest;
 import com.yaazhtech.ticketbookingsystem.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public class TicketController {
     private UserRepository userRepository;
 
     @PostMapping("/save")
-    public String userDetail(@RequestBody UserRequest userId){
-        UserData userData=new UserData();
+    public String userDetail(@RequestBody UserRequest userId) {
+        UserData userData = new UserData();
         userData.setUserId(userId.getUserId());
         userData.setMovieName(userId.getMovieName());
         userData.setTheatreName(userId.getTheatreName());
@@ -32,10 +33,26 @@ public class TicketController {
         return "userdata has been saved successfully";
 
     }
+
     @GetMapping("/allUserId")
     public List<UserData> getAllUserDetail() {
         // Returns list of all employees from DB
         return userRepository.findAll();
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
