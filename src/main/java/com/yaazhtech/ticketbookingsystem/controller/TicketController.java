@@ -39,7 +39,19 @@ public class TicketController {
         // Returns list of all employees from DB
         return userRepository.findAll();
     }
+    @GetMapping("/{id}") // Maps HTTP GET requests to /employee/detail/{id}
+    public UserData getUserById(@PathVariable Long id) {
+        // @PathVariable binds URL path parameter {id} to method parameter
+        // findById returns Optional; orElse(null) returns null if employee not found
+        return userRepository.findById(id).orElse(null);
+    }
+    @DeleteMapping("/{id}") // Maps HTTP DELETE requests to /employee/detail/{id}
+    public void deleteUserDetail(@PathVariable Long id) {
+        // JPA repository method to delete entity by ID
+        userRepository.deleteById(id);
+    }
 }
+
 
 
 
