@@ -19,8 +19,8 @@ public class TicketController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("/save")
-    public String userDetail(@RequestBody UserRequest userId) {
+    @PostMapping("/save")//comments line: endpoint
+   public String userDetail(@RequestBody UserRequest userId) {
         UserData userData = new UserData();
         userData.setUserId(userId.getUserId());
         userData.setMovieName(userId.getMovieName());
