@@ -50,6 +50,25 @@ public class TicketController {
         // JPA repository method to delete entity by ID
         userRepository.deleteById(id);
     }
+    @PutMapping("/{id}") // Maps HTTP PUT requests to /employee/detail/{id}
+    public UserData updateUserDetail(@PathVariable Long id, @RequestBody UserData updatedUserDetail) {
+        // Find existing employee from DB
+        UserData existingUserDetail = userRepository.findById(id).orElse(null);
+
+        // If employee exists, update fields
+        if (existingUserDetail != null) {
+            existingUserDetail.setUserId(updatedUserDetail.getUserId());
+            existingUserDetail.setTheatreName(updatedUserDetail.getTheatreName());
+            existingUserDetail.setSeatNumber(updatedUserDetail.getSeatNumber());
+            existingUserDetail.setMobileNumber(updatedUserDetail.getMobileNumber());
+            existingUserDetail.setShowTime(updatedUserDetail.getShowTime());
+            existingUserDetail.setAmount(updatedUserDetail.getAmount());
+        }
+
+            // Save updated employee to DB and return updated entity
+            return userRepository.save(existingUserDetail);
+
+    }
 }
 
 
@@ -66,5 +85,5 @@ public class TicketController {
 
 
 
-}
+
 

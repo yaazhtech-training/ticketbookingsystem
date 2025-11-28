@@ -1,10 +1,10 @@
 package com.yaazhtech.ticketbookingsystem.model;
 
 public class UserRequest {
-    private  Long userId;
+      Long userId;
     private String movieName;
     private String theatreName;
-    private String seatNumber;
+    private String sprivateeatNumber;
     private String moblieNumber;
     private String showTime;
 
