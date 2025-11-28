@@ -4,7 +4,7 @@ public class UserRequest {
       Long userId;
     private String movieName;
     private String theatreName;
-    private String sprivateeatNumber;
+    private String seatNumber;
     private String moblieNumber;
     private String showTime;
 
